@@ -18,5 +18,38 @@ var distance = function(cord1,cord2){
 }
 
 var updateMatrix = function(mat) {
+    let q = [];
+
+    // adding the zeros to the queue.
+    for (let i = 0; i < mat.length; i++) {
+        for (let j = 0; j < mat[i].length; j++) {
+            if(mat[i][j]===0){
+                q.push([i,j]);
+            }
+     }
+    }       
     
+    let k;
+    k = q.length;
+
+    for (let i = 0; i < mat.length; i++) {
+        for (let j = 0; j < mat[i].length; j++) {
+            
+            if(mat[i][j]===1){
+                let dist = Number.MAX_VALUE;
+            for(let l=0;l<k;l++){
+                let ma = q.shift();
+                if(mat[i][j]===1){
+                    dist = Math.min(dist,distance(ma,[i,j]));
+                }    
+                q.push(ma);
+            }
+            mat[i][j] = dist;
+        }
+    } 
+ }    
 };
+
+
+var matris = [[0,0,0],[0,1,0],[1,1,1]];
+updateMatrix(matris);
