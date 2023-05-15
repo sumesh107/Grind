@@ -1,0 +1,11 @@
+{
+  "name": "grind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "valid_paranthesis.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "sumesh",
+  "license": "ISC"
+}
