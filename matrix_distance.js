@@ -34,7 +34,7 @@ var updateMatrix = function(mat) {
 
     for (let i = 0; i < mat.length; i++) {
         for (let j = 0; j < mat[i].length; j++) {
-            
+    // when 1 encounters, check distance of zeros from 1        
             if(mat[i][j]===1){
                 let dist = Number.MAX_VALUE;
             for(let l=0;l<k;l++){
