@@ -1,0 +1,6083 @@
+{
+    "table": {
+      "id": "ORDR",
+      "description": "Sales Order",
+      "string_list": 1100148,
+      "view_type": "Document",
+      "domain": "User",
+      "info_category": "MarketingDocuments",
+      "hana": "ColumnBasedPreload",
+      "column": [
+        {
+          "id": "DocEntry",
+          "source_code_name": "ABS_ENTRY",
+          "description": "Internal Number",
+          "invisible": "",
+          "field_type": 100,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "DocNum",
+          "source_code_name": "NUM",
+          "description": "Document Number",
+          "field_type": 2,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "DocType",
+          "source_code_name": "TYPE",
+          "description": "Document Type",
+          "field_type": 90,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "I",
+          "valid_value": [
+            {
+              "value": "I",
+              "description": "Item"
+            },
+            {
+              "value": "S",
+              "description": "Service"
+            }
+          ]
+        },
+        {
+          "id": "CANCELED",
+          "source_code_name": "CANCELED",
+          "description": "Canceled",
+          "field_type": 10,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "Handwrtten",
+          "source_code_name": "HANDWRITEN",
+          "description": "Manual Numbering",
+          "field_type": 226,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "Printed",
+          "source_code_name": "PRINTED",
+          "description": "Printed",
+          "field_type": 95,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Copy"
+            },
+            {
+              "value": "N",
+              "description": "Original"
+            },
+            {
+              "value": "A",
+              "description": "Amended"
+            }
+          ]
+        },
+        {
+          "id": "DocStatus",
+          "source_code_name": "STATUS",
+          "description": "Document Status",
+          "field_type": 14,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "O",
+          "valid_value": [
+            {
+              "value": "O",
+              "description": "Open"
+            },
+            {
+              "value": "C",
+              "description": "Closed"
+            }
+          ]
+        },
+        {
+          "id": "InvntSttus",
+          "source_code_name": "INVENTORY_STATUS",
+          "description": "Warehouse Status",
+          "field_type": 183,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "O",
+          "valid_value": [
+            {
+              "value": "O",
+              "description": "Open"
+            },
+            {
+              "value": "C",
+              "description": "Closed"
+            }
+          ]
+        },
+        {
+          "id": "Transfered",
+          "source_code_name": "TRANSFERED",
+          "description": "Year Transfer",
+          "field_type": 111,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "ObjType",
+          "source_code_name": "OBJECT",
+          "description": "Object Type",
+          "field_type": 67,
+          "db_type": "AlphaNumeric",
+          "db_size": 20,
+          "edit_type": "None",
+          "edit_size": 20,
+          "default_value": 17,
+          "valid_value": {
+            "value": 17,
+            "description": "Sales Order"
+          }
+        },
+        {
+          "id": "DocDate",
+          "source_code_name": "DATE",
+          "description": "Posting Date",
+          "field_type": 3,
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "DocDueDate",
+          "source_code_name": "DUE_DATE",
+          "description": "Due Date",
+          "field_type": 4,
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "CardCode",
+          "source_code_name": "CARD_CODE",
+          "description": "Customer/Vendor Code",
+          "field_type": 60,
+          "db_type": "AlphaNumeric",
+          "db_size": 15,
+          "edit_type": "None",
+          "edit_size": 15
+        },
+        {
+          "id": "CardName",
+          "source_code_name": "CARD_NAME",
+          "description": "Customer/Vendor Name",
+          "field_type": 19,
+          "db_type": "AlphaNumeric",
+          "db_size": 200,
+          "edit_type": "None",
+          "edit_size": 200
+        },
+        {
+          "id": "Address",
+          "source_code_name": "ADDRESS",
+          "description": "Bill To",
+          "field_type": 177,
+          "db_type": "AlphaNumeric",
+          "db_size": 254,
+          "edit_type": "Map",
+          "edit_size": 254
+        },
+        {
+          "id": "NumAtCard",
+          "source_code_name": "NUM_AT_CARD",
+          "description": "BP Reference No.",
+          "field_type": 170,
+          "db_type": "AlphaNumeric",
+          "db_size": 100,
+          "edit_type": "None",
+          "edit_size": 100
+        },
+        {
+          "id": "VatPercent",
+          "source_code_name": "VAT_PERCENT",
+          "description": "Tax Rate",
+          "field_type": 6,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Percent",
+          "edit_size": 20
+        },
+        {
+          "id": "VatSum",
+          "source_code_name": "VAT_SUM",
+          "description": "Total Tax",
+          "field_type": 7,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "VatSumFC",
+          "source_code_name": "VAT_FRGN",
+          "description": "Tax Amount (FC)",
+          "field_type": 185,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "DiscPrcnt",
+          "source_code_name": "DISC_PERCENT",
+          "description": "Discount % for Document",
+          "field_type": 15,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Percent",
+          "edit_size": 20
+        },
+        {
+          "id": "DiscSum",
+          "source_code_name": "DISCOUNT_SUM",
+          "description": "Total Discount",
+          "field_type": 16,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "DiscSumFC",
+          "source_code_name": "DISCOUNT_FRGN",
+          "description": "Total Discount (FC)",
+          "field_type": 186,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "DocCur",
+          "source_code_name": "DOC_CURRENCY",
+          "description": "Document Currency",
+          "field_type": 115,
+          "db_type": "AlphaNumeric",
+          "db_size": 3,
+          "edit_type": "None",
+          "edit_size": 3
+        },
+        {
+          "id": "DocRate",
+          "source_code_name": "DOC_RATE",
+          "description": "Document Rate",
+          "field_type": 116,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Rate",
+          "edit_size": 20
+        },
+        {
+          "id": "DocTotal",
+          "source_code_name": "TOTAL_SUM",
+          "description": "Document Total",
+          "field_type": 9,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "DocTotalFC",
+          "source_code_name": "TOTAL_FRGN",
+          "description": "Document Total (FC)",
+          "field_type": 118,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "PaidToDate",
+          "source_code_name": "APPLIED_TO_DATE",
+          "description": "Paid to Date",
+          "field_type": 58,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "PaidFC",
+          "source_code_name": "APPLIED_FRGN",
+          "description": "Paid (FC)",
+          "field_type": 187,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "GrosProfit",
+          "source_code_name": "GROSS_PROFIT",
+          "description": "Gross Profit",
+          "field_type": 8,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "GrosProfFC",
+          "source_code_name": "GROSS_PROFIT_FRGN",
+          "description": "Gross Profit (FC)",
+          "field_type": 188,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "Ref1",
+          "source_code_name": "REF1",
+          "description": "Reference 1",
+          "field_type": 17,
+          "db_type": "AlphaNumeric",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "Ref2",
+          "source_code_name": "REF2",
+          "description": "Reference 2",
+          "field_type": 18,
+          "db_type": "AlphaNumeric",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "Comments",
+          "source_code_name": "COMMENT",
+          "description": "Remarks",
+          "field_type": 152,
+          "db_type": "AlphaNumeric",
+          "db_size": 254,
+          "edit_type": "None",
+          "edit_size": 254
+        },
+        {
+          "id": "JrnlMemo",
+          "source_code_name": "JOURNAL_MEMO",
+          "description": "Journal Remarks",
+          "field_type": 5,
+          "db_type": "AlphaNumeric",
+          "db_size": 254,
+          "edit_type": "None",
+          "edit_size": 254
+        },
+        {
+          "id": "TransId",
+          "source_code_name": "TRANS_NUM",
+          "description": "Transaction Number",
+          "field_type": 74,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "ReceiptNum",
+          "source_code_name": "RCPT_NUM",
+          "description": "Receipt Number",
+          "field_type": 105,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "GroupNum",
+          "source_code_name": "PAYMENT_TERMS",
+          "description": "Payment Terms Code",
+          "field_type": 80,
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6
+        },
+        {
+          "id": "DocTime",
+          "source_code_name": "TIME",
+          "description": "Generation Time",
+          "field_type": 99,
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "Time",
+          "edit_size": 6
+        },
+        {
+          "id": "SlpCode",
+          "source_code_name": "AGENT",
+          "description": "Sales Employee",
+          "field_type": 73,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11,
+          "default_value": -1
+        },
+        {
+          "id": "TrnspCode",
+          "source_code_name": "SHIP_TYPE",
+          "description": "Shipping Type",
+          "field_type": 107,
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6,
+          "default_value": -1
+        },
+        {
+          "id": "PartSupply",
+          "source_code_name": "PARTIAL_SUPPLY",
+          "description": "Partial Delivery",
+          "field_type": 108,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "Y",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "Confirmed",
+          "source_code_name": "CONFIRMED",
+          "description": "Confirmed",
+          "field_type": 183,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "Y",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "GrossBase",
+          "source_code_name": "GROSS_BASE",
+          "description": "Price List for Gross Profit",
+          "field_type": 51,
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6,
+          "default_value": 0
+        },
+        {
+          "id": "ImportEnt",
+          "source_code_name": "IMPORT_FILE",
+          "description": "Landed Costs Internal ID",
+          "field_type": 218,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "CreateTran",
+          "source_code_name": "CREATE_TRANS",
+          "description": "Create Journal Entry",
+          "invisible": "",
+          "field_type": 223,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "SummryType",
+          "source_code_name": "SUMMARY_TYPE",
+          "description": "Summary Method",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No Summary"
+            },
+            {
+              "value": "I",
+              "description": "By Items"
+            },
+            {
+              "value": "D",
+              "description": "By Documents"
+            }
+          ]
+        },
+        {
+          "id": "UpdInvnt",
+          "source_code_name": "UPDATE_INVENTORY",
+          "description": "Whse Update",
+          "field_type": 224,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "O",
+              "description": "Orders from Vendors"
+            },
+            {
+              "value": "C",
+              "description": "Sales Orders"
+            },
+            {
+              "value": "G",
+              "description": "Consignment"
+            },
+            {
+              "value": "I",
+              "description": "Stock"
+            }
+          ]
+        },
+        {
+          "id": "UpdCardBal",
+          "source_code_name": "UPDATE_CARD_BALANCE",
+          "description": "Update Balances",
+          "field_type": 225,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "O",
+              "description": "Orders"
+            },
+            {
+              "value": "D",
+              "description": "Delivery Notes"
+            },
+            {
+              "value": "B",
+              "description": "Bookkeeping"
+            }
+          ]
+        },
+        {
+          "id": "Instance",
+          "source_code_name": "INSTANCE",
+          "description": "Instance",
+          "invisible": "",
+          "field_type": 227,
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6,
+          "default_value": 0
+        },
+        {
+          "id": "Flags",
+          "source_code_name": "FLAGS",
+          "description": "Flags",
+          "invisible": "",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11,
+          "default_value": 0
+        },
+        {
+          "id": "InvntDirec",
+          "source_code_name": "INVENTORY_DIRECTION",
+          "description": "Warehouse Direction",
+          "invisible": "",
+          "field_type": 69,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "X",
+          "valid_value": [
+            {
+              "value": "X",
+              "description": "Release"
+            },
+            {
+              "value": "E",
+              "description": "Receipt"
+            }
+          ]
+        },
+        {
+          "id": "CntctCode",
+          "source_code_name": "CONTACT_PERSON",
+          "description": "Contact Person",
+          "field_type": 219,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "ShowSCN",
+          "source_code_name": "SHOW_SCN",
+          "description": "Display BP Catalog Number",
+          "invisible": "",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "FatherCard",
+          "source_code_name": "FATHER_CARD",
+          "description": "BP Consolidation",
+          "field_type": 228,
+          "db_type": "AlphaNumeric",
+          "db_size": 15,
+          "edit_type": "None",
+          "edit_size": 15
+        },
+        {
+          "id": "SysRate",
+          "source_code_name": "SYSTEM_RATE",
+          "description": "System Price",
+          "field_type": 233,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Rate",
+          "edit_size": 20
+        },
+        {
+          "id": "CurSource",
+          "source_code_name": "CURRENCY_SOURCE",
+          "description": "Base Currency",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "C",
+          "valid_value": [
+            {
+              "value": "L",
+              "description": "Local Currency"
+            },
+            {
+              "value": "S",
+              "description": "System Currency"
+            },
+            {
+              "value": "C",
+              "description": "BP Currency"
+            }
+          ]
+        },
+        {
+          "id": "VatSumSy",
+          "source_code_name": "VAT_SYS",
+          "description": "Tax Amount (SC)",
+          "field_type": 236,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "DiscSumSy",
+          "source_code_name": "DISCOUNT_SYS",
+          "description": "Total Discount (SC)",
+          "field_type": 237,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "DocTotalSy",
+          "source_code_name": "TOTAL_SYS",
+          "description": "Document Total (SC)",
+          "field_type": 239,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "PaidSys",
+          "source_code_name": "APPLIED_SYS",
+          "description": "Paid (SC)",
+          "field_type": 238,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "FatherType",
+          "source_code_name": "FATHER_TYPE",
+          "description": "Parent Summary Type",
+          "field_type": 240,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "P",
+          "valid_value": [
+            {
+              "value": "P",
+              "description": "Payment Consolidation"
+            },
+            {
+              "value": "D",
+              "description": "Delivery Consolidation"
+            }
+          ]
+        },
+        {
+          "id": "GrosProfSy",
+          "source_code_name": "GROSS_PROFIT_SYS",
+          "description": "Gross Profit (SC)",
+          "field_type": 241,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "UpdateDate",
+          "source_code_name": "UPDATE_DATE",
+          "description": "Date of Update",
+          "field_type": 243,
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "IsICT",
+          "source_code_name": "IS_ICT",
+          "description": "A/R Invoice + Payment",
+          "field_type": 223,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "CreateDate",
+          "source_code_name": "CREATE_DATE",
+          "description": "Creation Date",
+          "field_type": 242,
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "Volume",
+          "source_code_name": "VOLUME",
+          "description": "Volume",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Measure",
+          "edit_size": 20
+        },
+        {
+          "id": "VolUnit",
+          "source_code_name": "VOL_UNIT",
+          "description": "Volume UoM",
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6
+        },
+        {
+          "id": "Weight",
+          "source_code_name": "WEIGHT",
+          "description": "Weight",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Measure",
+          "edit_size": 20
+        },
+        {
+          "id": "WeightUnit",
+          "source_code_name": "WGT_UNIT",
+          "description": "Weight UoM",
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6
+        },
+        {
+          "id": "Series",
+          "source_code_name": "SERIES",
+          "description": "Series",
+          "field_type": 247,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "TaxDate",
+          "source_code_name": "TAX_DATE",
+          "description": "Document Date",
+          "field_type": 53,
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "Filler",
+          "source_code_name": "FROM_WAREHOUSE",
+          "description": "Filter",
+          "field_type": 500,
+          "db_type": "AlphaNumeric",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "DataSource",
+          "source_code_name": "DATA_SOURCE",
+          "description": "Data Source",
+          "invisible": "",
+          "field_type": 97,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "Unknown"
+            },
+            {
+              "value": "I",
+              "description": "Interface"
+            },
+            {
+              "value": "U",
+              "description": "Upgrade"
+            },
+            {
+              "value": "M",
+              "description": "Import"
+            },
+            {
+              "value": "O",
+              "description": "DI API"
+            },
+            {
+              "value": "S",
+              "description": "Service Layer"
+            },
+            {
+              "value": "W",
+              "description": "Web Client"
+            },
+            {
+              "value": "A",
+              "description": "Auto Summary"
+            },
+            {
+              "value": "D",
+              "description": "Restore Wizard"
+            },
+            {
+              "value": "P",
+              "description": "Partner Implementation"
+            },
+            {
+              "value": "T",
+              "description": "Year Transfer"
+            }
+          ]
+        },
+        {
+          "id": "StampNum",
+          "source_code_name": "STAMP_NUM",
+          "description": "Stamp No.",
+          "db_type": "AlphaNumeric",
+          "db_size": 16,
+          "edit_type": "None",
+          "edit_size": 16
+        },
+        {
+          "id": "isCrin",
+          "source_code_name": "IS_CORRECTION",
+          "description": "Corrected Invoice",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "FinncPriod",
+          "source_code_name": "FINANCE_PERIOD",
+          "description": "Posting Period",
+          "field_type": 76,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "UserSign",
+          "source_code_name": "USER_SIGNATURE",
+          "description": "User Signature",
+          "field_type": 50,
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6
+        },
+        {
+          "id": "selfInv",
+          "source_code_name": "SELF_INVOICE",
+          "description": "Autom. Invoice",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "Y",
+              "description": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "VatPaid",
+          "source_code_name": "VAT_APPLIED",
+          "description": "Tax Paid to Date",
+          "field_type": 58,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "VatPaidFC",
+          "source_code_name": "VAT_APPLIED_FRGN",
+          "description": "Tax Paid (FC)",
+          "field_type": 187,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "VatPaidSys",
+          "source_code_name": "VAT_APPLIED_SYS",
+          "description": "Tax Paid (SC)",
+          "field_type": 238,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "UserSign2",
+          "source_code_name": "_USER2_",
+          "description": "Updating User",
+          "invisible": "",
+          "field_type": 78,
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6
+        },
+        {
+          "id": "WddStatus",
+          "source_code_name": "WDD_STATUS",
+          "description": "Authorization Status",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "-",
+          "valid_value": [
+            {
+              "value": "-",
+              "description": "Without"
+            },
+            {
+              "value": "W",
+              "description": "Pending"
+            },
+            {
+              "value": "Y",
+              "description": "Approved"
+            },
+            {
+              "value": "N",
+              "description": "Rejected"
+            },
+            {
+              "value": "P",
+              "description": "Generated"
+            },
+            {
+              "value": "A",
+              "description": "Generated by Authorizer"
+            },
+            {
+              "value": "C",
+              "description": "Canceled"
+            }
+          ]
+        },
+        {
+          "id": "draftKey",
+          "source_code_name": "DRAFT_KEY",
+          "description": "Document Draft Internal ID",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11,
+          "default_value": -1
+        },
+        {
+          "id": "TotalExpns",
+          "source_code_name": "TOTAL_EXPENSES",
+          "description": "Total Freight Charges",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "TotalExpFC",
+          "source_code_name": "TOTAL_EXPENSES_FC",
+          "description": "Total Freight Charges (FC)",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "TotalExpSC",
+          "source_code_name": "TOTAL_EXPENSES_SC",
+          "description": "Total Freight Charges (SC)",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "DunnLevel",
+          "source_code_name": "DUNNING_LEVEL",
+          "description": "Dunning Level",
+          "invisible": "",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 1
+        },
+        {
+          "id": "Address2",
+          "source_code_name": "ADDRESS_2",
+          "description": "Ship To",
+          "field_type": 177,
+          "db_type": "AlphaNumeric",
+          "db_size": 254,
+          "edit_type": "Map",
+          "edit_size": 254
+        },
+        {
+          "id": "LogInstanc",
+          "source_code_name": "LOG_INSTANCE",
+          "description": "Log Instance",
+          "invisible": "",
+          "field_type": 260,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11,
+          "default_value": 0
+        },
+        {
+          "id": "Exported",
+          "source_code_name": "EXP",
+          "description": "Exported",
+          "field_type": 79,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "StationID",
+          "source_code_name": "STATION_ID",
+          "description": "Workstation ID",
+          "field_type": 83,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "Indicator",
+          "source_code_name": "INDICATOR",
+          "description": "Indicator",
+          "field_type": 500,
+          "db_type": "AlphaNumeric",
+          "db_size": 2,
+          "edit_type": "None",
+          "edit_size": 2
+        },
+        {
+          "id": "NetProc",
+          "source_code_name": "NET_PROC",
+          "description": "Net Procedure",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "AqcsTax",
+          "source_code_name": "AQCUISITION_TAX",
+          "description": "Acquisition Tax",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "AqcsTaxFC",
+          "source_code_name": "AQCUISITION_TAX_FC",
+          "description": "Acquisition Tax (FC)",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "AqcsTaxSC",
+          "source_code_name": "AQCUISITION_TAX_SC",
+          "description": "Acquisition Tax (SC)",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "CashDiscPr",
+          "source_code_name": "CASH_DISCOUNT_PRCNT",
+          "description": "Cash Discount Percentage",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Percent",
+          "edit_size": 20
+        },
+        {
+          "id": "CashDiscnt",
+          "source_code_name": "CASH_DISCOUNT",
+          "description": "Cash Discount",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "CashDiscFC",
+          "source_code_name": "CASH_DISCOUNT_FC",
+          "description": "Cash Discount (FC)",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "CashDiscSC",
+          "source_code_name": "CASH_DISCOUNT_SC",
+          "description": "Cash Discount (SC)",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "ShipToCode",
+          "source_code_name": "SHIP_TO_CODE",
+          "description": "Ship-to Code",
+          "field_type": 500,
+          "db_type": "AlphaNumeric",
+          "db_size": 50,
+          "edit_type": "None",
+          "edit_size": 50
+        },
+        {
+          "id": "LicTradNum",
+          "source_code_name": "TAX_ID_NUMBER",
+          "description": "Licensed Dealer No.",
+          "db_type": "AlphaNumeric",
+          "db_size": 32,
+          "edit_type": "Tax",
+          "edit_size": 32
+        },
+        {
+          "id": "PaymentRef",
+          "source_code_name": "PAYMENT_REF",
+          "description": "Payment Reference No.",
+          "db_type": "AlphaNumeric",
+          "db_size": 27,
+          "edit_type": "None",
+          "edit_size": 27
+        },
+        {
+          "id": "WTSum",
+          "source_code_name": "WT_SUM",
+          "description": "WTax Amount",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "WTSumFC",
+          "source_code_name": "WT_SUM_FC",
+          "description": "WTax Amount (FC)",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "WTSumSC",
+          "source_code_name": "WT_SUM_SC",
+          "description": "WTax Amount (SC)",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "RoundDif",
+          "source_code_name": "ROUNDING_DIFF",
+          "description": "Rounding Diff. Amount",
+          "field_type": 262,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "RoundDifFC",
+          "source_code_name": "ROUNDING_DIFF_FC",
+          "description": "Rounding Diff. Amount (FC)",
+          "field_type": 262,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "RoundDifSy",
+          "source_code_name": "ROUNDING_DIFF_SC",
+          "description": "Rounding Diff. Amount (SC)",
+          "field_type": 262,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "CheckDigit",
+          "source_code_name": "CHECK_DIGIT",
+          "description": "Control Digit",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1
+        },
+        {
+          "id": "Form1099",
+          "source_code_name": "FORM_1099",
+          "description": "1099 Form",
+          "field_type": 110,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 100
+        },
+        {
+          "id": "Box1099",
+          "source_code_name": "BOX_1099",
+          "description": "1099 Box",
+          "field_type": 500,
+          "db_type": "AlphaNumeric",
+          "db_size": 20,
+          "edit_type": "None",
+          "edit_size": 20
+        },
+        {
+          "id": "submitted",
+          "source_code_name": "SUBMITTED",
+          "description": "Submitted",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "PoPrss",
+          "source_code_name": "PO_PROCESS",
+          "description": "PO Process",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "Rounding",
+          "source_code_name": "ROUNDING",
+          "description": "Rounding",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "RevisionPo",
+          "source_code_name": "REVISION_PO",
+          "description": "Split PO",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "Segment",
+          "source_code_name": "SEGMENT",
+          "description": "Segment",
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6,
+          "default_value": 0
+        },
+        {
+          "id": "ReqDate",
+          "source_code_name": "REQUIRED_DATE",
+          "description": "Required Date",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "CancelDate",
+          "source_code_name": "CANCEL_DATE",
+          "description": "Cancelation Date",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "PickStatus",
+          "source_code_name": "PICK_STATUS",
+          "description": "Pick Status",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "Pick",
+          "source_code_name": "PICK",
+          "description": "Pick",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "BlockDunn",
+          "source_code_name": "BLOCK_DUNNING",
+          "description": "Block Dunning",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "PeyMethod",
+          "source_code_name": "PAYMENT_METHOD",
+          "description": "Payment Method",
+          "db_type": "AlphaNumeric",
+          "db_size": 15,
+          "edit_type": "None",
+          "edit_size": 15
+        },
+        {
+          "id": "PayBlock",
+          "source_code_name": "PAYMENT_BLOCK",
+          "description": "Payment Block",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "PayBlckRef",
+          "source_code_name": "PAYMENT_BLOCK_REF",
+          "description": "Payment Block Abs Entry",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "MaxDscn",
+          "source_code_name": "MAX_CASH_DISCOUNT",
+          "description": "Maximum Discount",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "Reserve",
+          "source_code_name": "RESERVE",
+          "description": "Reserve",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "Max1099",
+          "source_code_name": "MAX_1099",
+          "description": "Max. 1099 Amount",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "CntrlBnk",
+          "source_code_name": "CENTRAL_BANK",
+          "description": "Central Bank Indicator",
+          "db_type": "AlphaNumeric",
+          "db_size": 15,
+          "edit_type": "None",
+          "edit_size": 15
+        },
+        {
+          "id": "PickRmrk",
+          "source_code_name": "PICK_REMARK",
+          "description": "Pick Remarks",
+          "db_type": "AlphaNumeric",
+          "db_size": 254,
+          "edit_type": "None",
+          "edit_size": 254
+        },
+        {
+          "id": "ISRCodLine",
+          "source_code_name": "ISR_CODING_LINE",
+          "description": "ISR Coding Line",
+          "db_type": "AlphaNumeric",
+          "db_size": 53,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "ExpAppl",
+          "source_code_name": "EXPENSES_APPLIED",
+          "description": "Exp applied",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "ExpApplFC",
+          "source_code_name": "EXPENSES_APPLIED_FC",
+          "description": "Exp applied FC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "ExpApplSC",
+          "source_code_name": "EXPENSES_APPLIED_SC",
+          "description": "Exp applied DC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "Project",
+          "source_code_name": "PROJECT",
+          "description": "Project Code",
+          "field_type": 500,
+          "db_type": "AlphaNumeric",
+          "db_size": 20,
+          "edit_type": "None",
+          "edit_size": 20
+        },
+        {
+          "id": "DeferrTax",
+          "source_code_name": "DEFERRED_TAX",
+          "description": "Deferred Tax",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "LetterNum",
+          "source_code_name": "TAX_EXMPT_LETTER_NUM",
+          "description": "Tax Exemption Letter No.",
+          "db_type": "AlphaNumeric",
+          "db_size": 50,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "FromDate",
+          "source_code_name": "TAX_EXMPT_FROM_DATE",
+          "description": "Exemption Validity Date From",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "ToDate",
+          "source_code_name": "TAX_EXMPT_TO_DATE",
+          "description": "Exemption Validity Date To",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "WTApplied",
+          "source_code_name": "WT_APPLIED",
+          "description": "Applied WTax",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "WTAppliedF",
+          "source_code_name": "WT_APPLIED_FC",
+          "description": "Applied WTax (FC)",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "BoeReserev",
+          "source_code_name": "BOE_RESERVED",
+          "description": "Bill of Exchange Reserved",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "AgentCode",
+          "source_code_name": "AGENT_CODE",
+          "description": "Agent Code",
+          "db_type": "AlphaNumeric",
+          "db_size": 32,
+          "edit_type": "None",
+          "edit_size": 32
+        },
+        {
+          "id": "WTAppliedS",
+          "source_code_name": "WT_APPLIED_SC",
+          "description": "Applied WTax (SC)",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "EquVatSum",
+          "source_code_name": "EQU_VAT_SUM",
+          "description": "Total Equalization Tax",
+          "field_type": 7,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "EquVatSumF",
+          "source_code_name": "EQU_VAT_SUM_FC",
+          "description": "Total Equalization Tax (FC)",
+          "field_type": 7,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "EquVatSumS",
+          "source_code_name": "EQU_VAT_SUM_SC",
+          "description": "Total Equalization Tax (SC)",
+          "field_type": 7,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "Installmnt",
+          "source_code_name": "INSTALLMENTS",
+          "description": "No. of Installments",
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "Positive",
+          "edit_size": 0,
+          "default_value": 1
+        },
+        {
+          "id": "VATFirst",
+          "source_code_name": "VAT_ON_FIRST_INST",
+          "description": "Apply Tax on 1st Installment",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "T",
+              "description": "Tax Only"
+            }
+          ]
+        },
+        {
+          "id": "NnSbAmnt",
+          "source_code_name": "WT_NON_SBJCT_AMNT",
+          "description": "WTax Non-Subject Amount",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "NnSbAmntSC",
+          "source_code_name": "WT_NON_SBJCT_AMNT_SC",
+          "description": "WTax Non-Subject Amount (SC)",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "NbSbAmntFC",
+          "source_code_name": "WT_NON_SBJCT_AMNT_FC",
+          "description": "WTax Non-Subject Amount (FC)",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "ExepAmnt",
+          "source_code_name": "WT_EXEMPTED_AMNT",
+          "description": "Withholding Tax Exempt Amount",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "ExepAmntSC",
+          "source_code_name": "WT_EXEMPTED_AMNT_SC",
+          "description": "WTax Exempt Amount (SC)",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "ExepAmntFC",
+          "source_code_name": "WT_EXEMPTED_AMNT_FC",
+          "description": "WTax Exempt Amount (FC)",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "VatDate",
+          "source_code_name": "VAT_DATE",
+          "description": "VAT Date",
+          "field_type": 501,
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "CorrExt",
+          "source_code_name": "CORR_EXTERN",
+          "description": "External Corrected Document No.",
+          "field_type": 502,
+          "db_type": "AlphaNumeric",
+          "db_size": 25,
+          "edit_type": "None",
+          "edit_size": 25
+        },
+        {
+          "id": "CorrInv",
+          "source_code_name": "CORR_INV",
+          "description": "Internal Corrected Document No.",
+          "field_type": 502,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "NCorrInv",
+          "source_code_name": "NCORR_INV",
+          "description": "Next Correcting Document",
+          "field_type": 502,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "CEECFlag",
+          "source_code_name": "BLOCK_CORR_INV",
+          "description": "Block Creation Target Corr Inv",
+          "field_type": 502,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "Y",
+              "description": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "BaseAmnt",
+          "source_code_name": "WT_BASE_AMOUNT",
+          "description": "Base Amount",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "BaseAmntSC",
+          "source_code_name": "WT_BASE_AMOUNT_SC",
+          "description": "Base Amount (SC)",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "BaseAmntFC",
+          "source_code_name": "WT_BASE_AMOUNT_FC",
+          "description": "Base Amount (FC)",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "CtlAccount",
+          "source_code_name": "ACCOUNT",
+          "description": "Control Account",
+          "db_type": "AlphaNumeric",
+          "db_size": 15,
+          "edit_type": "None",
+          "edit_size": 15
+        },
+        {
+          "id": "BPLId",
+          "source_code_name": "BPL_ID",
+          "description": "Branch",
+          "field_type": 503,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "BPLName",
+          "source_code_name": "BPL_NAME",
+          "description": "Branch Name",
+          "db_type": "AlphaNumeric",
+          "db_size": 200,
+          "edit_type": "None",
+          "edit_size": 200
+        },
+        {
+          "id": "VATRegNum",
+          "source_code_name": "VAT_REG_NUM",
+          "description": "VAT Reg. Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 32,
+          "edit_type": "None",
+          "edit_size": 32
+        },
+        {
+          "id": "TxInvRptNo",
+          "source_code_name": "TX_INV_RPT_NO",
+          "description": "Tax Invoice Rpt Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 10,
+          "edit_type": "None",
+          "edit_size": 10
+        },
+        {
+          "id": "TxInvRptDt",
+          "source_code_name": "TX_INV_RPT_DT",
+          "description": "Tax Invoice Rpt Date",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "KVVATCode",
+          "source_code_name": "KV_VAT_CODE",
+          "description": "VAT Code for Tax Invoice Rpt",
+          "db_type": "Text",
+          "db_size": 0,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "WTDetails",
+          "source_code_name": "WT_DETAILS",
+          "description": "WTax Details",
+          "db_type": "AlphaNumeric",
+          "db_size": 100,
+          "edit_type": "None",
+          "edit_size": 100
+        },
+        {
+          "id": "SumAbsId",
+          "source_code_name": "SUM_RPT_ABS_ID",
+          "description": "Summary VAT Abstract ID",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 100,
+          "default_value": -1
+        },
+        {
+          "id": "SumRptDate",
+          "source_code_name": "SUM_RPT_DATE",
+          "description": "Summary VAT Report Date",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "PIndicator",
+          "source_code_name": "PERIOD_INDICATOR",
+          "description": "Period Indicator",
+          "field_type": 264,
+          "db_type": "AlphaNumeric",
+          "db_size": 10,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "' '"
+        },
+        {
+          "id": "ManualNum",
+          "source_code_name": "MANUAL_NUMBER",
+          "description": "Manual Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 20,
+          "edit_type": "None",
+          "edit_size": 20
+        },
+        {
+          "id": "UseShpdGd",
+          "source_code_name": "USE_SHPD_GOODS_ACC",
+          "description": "Use Shipped Goods Account",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "Y",
+              "description": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "BaseVtAt",
+          "source_code_name": "WT_BASE_VAT_AMNT",
+          "description": "BPL ID Assigned to Invoice",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "BaseVtAtSC",
+          "source_code_name": "WT_BASE_VAT_AMNT_SC",
+          "description": "BPL Name",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "BaseVtAtFC",
+          "source_code_name": "WT_BASE_VAT_AMNT_FC",
+          "description": "Tax Reg. Number",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "NnSbVAt",
+          "source_code_name": "WT_NNSB_VAT_AMNT",
+          "description": "Tax Invoice Rpt Number",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "NnSbVAtSC",
+          "source_code_name": "WT_NNSB_VAT_AMNT_SC",
+          "description": "Tax Invoice Rpt Date",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "NbSbVAtFC",
+          "source_code_name": "WT_NNSB_VAT_AMNT_FC",
+          "description": "WTax Non-Subject VAT Amount",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "ExptVAt",
+          "source_code_name": "WT_EXMPT_VAT_AMNT",
+          "description": "WTax Exempt VAT Amount",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "ExptVAtSC",
+          "source_code_name": "WT_EXMPT_VAT_AMNT_SC",
+          "description": "WTax Exempt VAT Amount (SC)",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "ExptVAtFC",
+          "source_code_name": "WT_EXMPT_VAT_AMNT_FC",
+          "description": "WTax Exempt VAT Amount (FC)",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "LYPmtAt",
+          "source_code_name": "LY_PMNT_AMNT",
+          "description": "Last Year's Payments",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "LYPmtAtSC",
+          "source_code_name": "LY_PMNT_AMNT_SC",
+          "description": "Last Years Payments (SC)",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "LYPmtAtFC",
+          "source_code_name": "LY_PMNT_AMNT_FC",
+          "description": "Summary Tax Report Date",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "ExpAnSum",
+          "source_code_name": "EXP_ANALYSIS_SUM",
+          "description": "Period Indicator",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "ExpAnSys",
+          "source_code_name": "EXP_ANALYSIS_SYS",
+          "description": "Manual Number",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "ExpAnFrgn",
+          "source_code_name": "EXP_ANALYSIS_FRGN",
+          "description": "Use Shipped Goods Account",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "DocSubType",
+          "source_code_name": "DOC_SUB_TYPE",
+          "description": "VAT Code for Tax Invoice Rpt",
+          "field_type": 266,
+          "db_type": "AlphaNumeric",
+          "db_size": 2,
+          "edit_type": "None",
+          "edit_size": 2,
+          "default_value": "--",
+          "valid_value": {
+            "value": "--",
+            "description": "Sales Order"
+          }
+        },
+        {
+          "id": "DpmStatus",
+          "source_code_name": "DPM_STATUS",
+          "description": "Summary VAT Abstract ID",
+          "field_type": 14,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "O",
+          "valid_value": [
+            {
+              "value": "O",
+              "description": "Open"
+            },
+            {
+              "value": "C",
+              "description": "Closed"
+            }
+          ]
+        },
+        {
+          "id": "DpmAmnt",
+          "source_code_name": "DPM_AMNT",
+          "description": "Down Payment Amount LC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "DpmAmntSC",
+          "source_code_name": "DPM_AMNT_SC",
+          "description": "Down Payment Amount SC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "DpmAmntFC",
+          "source_code_name": "DPM_AMNT_FC",
+          "description": "Down Payment Amount FC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "DpmDrawn",
+          "source_code_name": "DPM_DRAWN",
+          "description": "Drawn to Down Payment",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "Y",
+              "description": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "DpmPrcnt",
+          "source_code_name": "DPM_PERCENT",
+          "description": "Down Payment Percent",
+          "field_type": 15,
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Percent",
+          "edit_size": 20
+        },
+        {
+          "id": "PaidSum",
+          "source_code_name": "PAID_TO_DATE",
+          "description": "Total Paid Sum",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "PaidSumFc",
+          "source_code_name": "PAID_TO_DATE_FC",
+          "description": "Total Paid Sum (FC)",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "PaidSumSc",
+          "source_code_name": "PAID_TO_DATE_SC",
+          "description": "Total Paid Sum (SC)",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "FolioPref",
+          "source_code_name": "FOLIO_PREFIX",
+          "description": "Folio Prefix String",
+          "field_type": 272,
+          "db_type": "AlphaNumeric",
+          "db_size": 4,
+          "edit_type": "None",
+          "edit_size": 4
+        },
+        {
+          "id": "FolioNum",
+          "source_code_name": "FOLIO_NUMBER",
+          "description": "Folio Number",
+          "field_type": 271,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "Positive",
+          "edit_size": 11
+        },
+        {
+          "id": "DpmAppl",
+          "source_code_name": "DPM_APPLIED",
+          "description": "Down Payment Applied LC",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "DpmApplFc",
+          "source_code_name": "DPM_APPLIED_FC",
+          "description": "Down Payment Applied FC",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "DpmApplSc",
+          "source_code_name": "DPM_APPLIED_SC",
+          "description": "Down Payment Applied SC",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "LPgFolioN",
+          "source_code_name": "LAST_PAGE_FOLIO_NUM",
+          "description": "Folio No. for Last Page in Doc.",
+          "field_type": 270,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "Header",
+          "source_code_name": "HEADER",
+          "description": "Header",
+          "db_type": "Text",
+          "db_size": 0,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "Footer",
+          "source_code_name": "FOOTER",
+          "description": "Footer",
+          "db_type": "Text",
+          "db_size": 0,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "Posted",
+          "source_code_name": "DPM_POSTED",
+          "description": "Down Payment Was Posted",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "Y",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "OwnerCode",
+          "source_code_name": "OWNER_CODE",
+          "description": "Document Owner",
+          "field_type": 269,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "BPChCode",
+          "source_code_name": "BP_CHANNEL_CODE",
+          "description": "BP Channel Code",
+          "db_type": "AlphaNumeric",
+          "db_size": 15,
+          "edit_type": "None",
+          "edit_size": 15
+        },
+        {
+          "id": "BPChCntc",
+          "source_code_name": "BP_CHANNEL_CONTACT",
+          "description": "BP Channel Contact Person",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "PayToCode",
+          "source_code_name": "PAY_TO_CODE",
+          "description": "Pay To",
+          "db_type": "AlphaNumeric",
+          "db_size": 50,
+          "edit_type": "None",
+          "edit_size": 50
+        },
+        {
+          "id": "IsPaytoBnk",
+          "source_code_name": "IS_PAY_TO_BANK",
+          "description": "Is Pay to Bank",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "Y",
+              "description": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "BnkCntry",
+          "source_code_name": "BANK_COUNTRY",
+          "description": "Pay to Bank Country/Region",
+          "field_type": 500,
+          "db_type": "AlphaNumeric",
+          "db_size": 3,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "BankCode",
+          "source_code_name": "BANK_CODE",
+          "description": "Pay to Bank Code",
+          "db_type": "AlphaNumeric",
+          "db_size": 30,
+          "edit_type": "None",
+          "edit_size": 30
+        },
+        {
+          "id": "BnkAccount",
+          "source_code_name": "BANK_ACCOUNT",
+          "description": "Pay to Bank Account No.",
+          "field_type": 157,
+          "db_type": "AlphaNumeric",
+          "db_size": 50,
+          "edit_type": "None",
+          "edit_size": 50
+        },
+        {
+          "id": "BnkBranch",
+          "source_code_name": "BANK_BRANCH",
+          "description": "Pay to Bank Branch",
+          "field_type": 156,
+          "db_type": "AlphaNumeric",
+          "db_size": 50,
+          "edit_type": "None",
+          "edit_size": 50
+        },
+        {
+          "id": "isIns",
+          "source_code_name": "IS_INS",
+          "description": "Reserve Invoice",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "TrackNo",
+          "source_code_name": "TRACKING_NO",
+          "description": "Tracking Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 30,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "VersionNum",
+          "source_code_name": "VERSION_NUM",
+          "description": "Version Number",
+          "field_type": 274,
+          "db_type": "AlphaNumeric",
+          "db_size": 13,
+          "edit_type": "None",
+          "edit_size": 13
+        },
+        {
+          "id": "LangCode",
+          "source_code_name": "LANG_CODE",
+          "description": "Language Code",
+          "field_type": 275,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "BPNameOW",
+          "source_code_name": "BP_NAME_OVERWRITTEN",
+          "description": "BP Name Overwritten",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "BillToOW",
+          "source_code_name": "BILL_TO_OVERWRITTEN",
+          "description": "Bill-To Overwritten",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "ShipToOW",
+          "source_code_name": "SHIP_TO_OVERWRITTEN",
+          "description": "Ship-to Overwritten",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "RetInvoice",
+          "source_code_name": "RETURNING_INVOICE",
+          "description": "Returning Invoice",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "ClsDate",
+          "source_code_name": "CLS_DATE",
+          "description": "Document Closing Date",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "MInvNum",
+          "source_code_name": "MINV_NUM",
+          "description": "Monthly Invoice No.",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "MInvDate",
+          "source_code_name": "MINV_DATE",
+          "description": "Monthly Invoice Date",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "SeqCode",
+          "source_code_name": "SEQ_CODE",
+          "description": "Sequence Code",
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "Serial",
+          "source_code_name": "SERIAL",
+          "description": "Serial Numbers",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "SeriesStr",
+          "source_code_name": "SERIES_STR",
+          "description": "Series String",
+          "db_type": "AlphaNumeric",
+          "db_size": 3,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "SubStr",
+          "source_code_name": "SUB_STR",
+          "description": "Sub-Series String",
+          "db_type": "AlphaNumeric",
+          "db_size": 3,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "Model",
+          "source_code_name": "MODEL",
+          "description": "Nota Fiscal Model",
+          "db_type": "AlphaNumeric",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6,
+          "default_value": 0
+        },
+        {
+          "id": "TaxOnExp",
+          "source_code_name": "TAX_ON_EXPENSES",
+          "description": "Tax on Freight Sum",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "TaxOnExpFc",
+          "source_code_name": "TAX_ON_EXPENSES_FC",
+          "description": "Tax on Freight Sum (FC)",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "TaxOnExpSc",
+          "source_code_name": "TAX_ON_EXPENSES_SC",
+          "description": "Tax on Freight Sum (SC)",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "TaxOnExAp",
+          "source_code_name": "TAX_ON_EXP_APPLIED",
+          "description": "Tax on Freight Applied",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "TaxOnExApF",
+          "source_code_name": "TAX_ON_EXP_APP_FC",
+          "description": "Tax on Freight Applied (FC)",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "TaxOnExApS",
+          "source_code_name": "TAX_ON_EXP_APP_SC",
+          "description": "Tax on Freight Applied (SC)",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "LastPmnTyp",
+          "source_code_name": "LAST_RCPT_TYPE",
+          "description": "Last Payment Type",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "valid_value": [
+            {
+              "value": "R",
+              "description": "Receipt"
+            },
+            {
+              "value": "V",
+              "description": "Vendor Payment"
+            }
+          ]
+        },
+        {
+          "id": "LndCstNum",
+          "source_code_name": "LANDED_COST_NUM",
+          "description": "Landed Cost Number",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "UseCorrVat",
+          "source_code_name": "USE_CORRECTION_VAT",
+          "description": "Use Correction VAT Group",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "Y",
+              "description": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "BlkCredMmo",
+          "source_code_name": "BLOCK_CREDIT_MEMO",
+          "description": "Block Creation of Target Credit Memo",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "Y",
+              "description": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "OpenForLaC",
+          "source_code_name": "OPEN_FOR_LANDED_COST",
+          "description": "Open For Landed Costs",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "Y",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Open for Landed Costs"
+            },
+            {
+              "value": "N",
+              "description": "Closed for Landed Costs"
+            }
+          ]
+        },
+        {
+          "id": "Excised",
+          "source_code_name": "EXCISED",
+          "description": "Excised",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "O",
+          "valid_value": [
+            {
+              "value": "O",
+              "description": "Open"
+            },
+            {
+              "value": "C",
+              "description": "Close"
+            }
+          ]
+        },
+        {
+          "id": "ExcRefDate",
+          "source_code_name": "EXCISE_REF_DATE",
+          "description": "Excise Ref. Date",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "ExcRmvTime",
+          "source_code_name": "EXCISE_RMV_TIME",
+          "description": "Excise Removal Time",
+          "db_type": "AlphaNumeric",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "SrvGpPrcnt",
+          "source_code_name": "GP_SERVICE_PRCNT",
+          "description": "Gross Profit Prcnt of Service",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Percent",
+          "edit_size": 20
+        },
+        {
+          "id": "DepositNum",
+          "source_code_name": "DEPOSIT_NUM",
+          "description": "Deposit Number",
+          "field_type": 500,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "CertNum",
+          "source_code_name": "CERT_NUM",
+          "description": "Certificate Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 31,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "DutyStatus",
+          "source_code_name": "DUTY_STATUS",
+          "description": "Duty Status",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "Y",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "With Payment of Duty"
+            },
+            {
+              "value": "N",
+              "description": "Without Payment of Duty"
+            }
+          ]
+        },
+        {
+          "id": "AutoCrtFlw",
+          "source_code_name": "AUTO_CREATE_FLW",
+          "description": "Auto Create Follow-up Document",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "Y",
+              "description": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "FlwRefDate",
+          "source_code_name": "FLW_REF_DATE",
+          "description": "Follow-up Document Ref. Date",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "FlwRefNum",
+          "source_code_name": "FLW_REF_NUM",
+          "description": "Follow-up Document Ref. Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 100,
+          "edit_type": "None",
+          "edit_size": 100
+        },
+        {
+          "id": "VatJENum",
+          "source_code_name": "VAT_JE_NUM",
+          "description": "VAT Journal Entry Number",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11,
+          "default_value": -1
+        },
+        {
+          "id": "DpmVat",
+          "source_code_name": "DPM_VAT",
+          "description": "Down Payment Tax LC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "DpmVatFc",
+          "source_code_name": "DPM_VAT_FC",
+          "description": "Down Payment Tax FC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "DpmVatSc",
+          "source_code_name": "DPM_VAT_SC",
+          "description": "Down Payment Tax SC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "DpmAppVat",
+          "source_code_name": "DPM_APPL_VAT",
+          "description": "Down Payment Applied Tax LC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "DpmAppVatF",
+          "source_code_name": "DPM_APPL_VAT_FC",
+          "description": "Down Payment Applied Tax FC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "DpmAppVatS",
+          "source_code_name": "DPM_APPL_VAT_SC",
+          "description": "Down Payment Applied Tax SC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "InsurOp347",
+          "source_code_name": "INSURANCE_OP_347",
+          "description": "347 Insurance Operation",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "Y",
+              "description": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "IgnRelDoc",
+          "source_code_name": "IGNORE_RELEVANT_DOC",
+          "description": "Ignore Relevant Doc on Archive",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "Y",
+              "description": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "BuildDesc",
+          "source_code_name": "BUILD_DESCRIPTOR",
+          "description": "Build Descriptor",
+          "field_type": 284,
+          "db_type": "AlphaNumeric",
+          "db_size": 50,
+          "edit_type": "None",
+          "edit_size": 50
+        },
+        {
+          "id": "ResidenNum",
+          "source_code_name": "RESIDENCE_NUM",
+          "description": "Residence Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": 1,
+          "valid_value": [
+            {
+              "value": 1,
+              "description": "Spanish Fiscal ID"
+            },
+            {
+              "value": 2,
+              "description": "VAT Registration Number"
+            },
+            {
+              "value": 3,
+              "description": "Passport"
+            },
+            {
+              "value": 4,
+              "description": "Fiscal ID Issued by the Country/Region of Residence"
+            },
+            {
+              "value": 5,
+              "description": "Certificate of Fiscal Residence"
+            },
+            {
+              "value": 6,
+              "description": "Other Document"
+            },
+            {
+              "value": 7,
+              "description": "Not Registered"
+            }
+          ]
+        },
+        {
+          "id": "Checker",
+          "source_code_name": "CHECKER",
+          "description": "Checker",
+          "field_type": 500,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "Payee",
+          "source_code_name": "PAYEE",
+          "description": "Payee",
+          "field_type": 500,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "CopyNumber",
+          "source_code_name": "COPY_NUMBER",
+          "description": "Copy Number",
+          "field_type": 285,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": 0
+        },
+        {
+          "id": "SSIExmpt",
+          "source_code_name": "SSI_EXEMPTION",
+          "description": "SSI Exemption",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "PQTGrpSer",
+          "source_code_name": "PQT_GROUP_SERIES",
+          "description": "Pur Quotation Group Series",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "PQTGrpNum",
+          "source_code_name": "PQT_GROUP_NUMBER",
+          "description": "Pur Quotation Group Number",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "PQTGrpHW",
+          "source_code_name": "PQT_GROUP_HNDWIRTEN",
+          "description": "Pur Quotation Group Manual",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "ReopOriDoc",
+          "source_code_name": "REOPEN_ORIG_DOC",
+          "description": "Reopen Origin. Order by Return",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "ReopManCls",
+          "source_code_name": "REOPEN_MAN_CLSD_DOC",
+          "description": "Reop. Man. Closed/Canc. Orders",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "DocManClsd",
+          "source_code_name": "DOC_MANUALLY_CLOSED",
+          "description": "Document Was Closed Manually",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "U",
+              "description": "Unknown"
+            }
+          ]
+        },
+        {
+          "id": "ClosingOpt",
+          "source_code_name": "CLOSING_OPTION",
+          "description": "Closing Option",
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "Positive",
+          "edit_size": 6,
+          "default_value": 1
+        },
+        {
+          "id": "SpecDate",
+          "source_code_name": "SPECIFIED_DATE",
+          "description": "Posting Date Specified by User",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "Ordered",
+          "source_code_name": "ORDERED",
+          "description": "Payment Ordered",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "NTSApprov",
+          "source_code_name": "NTS_APPROVED",
+          "description": "NTS Approved",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "Y",
+              "description": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "NTSWebSite",
+          "source_code_name": "NTS_WEBSITE",
+          "description": "E-Tax Web Site",
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6
+        },
+        {
+          "id": "NTSeTaxNo",
+          "source_code_name": "NTS_E_TAX_NUMBER",
+          "description": "E-Tax Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 50,
+          "edit_type": "None",
+          "edit_size": 50
+        },
+        {
+          "id": "NTSApprNo",
+          "source_code_name": "NTS_APPROVAL_NUMBER",
+          "description": "NTS Approval Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 50,
+          "edit_type": "None",
+          "edit_size": 50
+        },
+        {
+          "id": "PayDuMonth",
+          "source_code_name": "PAY_DUE_MONTH",
+          "description": "Start From",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "valid_value": [
+            {
+              "value": "E",
+              "description": "Month End"
+            },
+            {
+              "value": "H",
+              "description": "Half Month"
+            },
+            {
+              "value": "Y",
+              "description": "Month Start"
+            },
+            {
+              "value": "N",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "ExtraMonth",
+          "source_code_name": "EXTRA_MONTH",
+          "description": "Number of Additional Months",
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6
+        },
+        {
+          "id": "ExtraDays",
+          "source_code_name": "EXTRA_DAYS",
+          "description": "Number of Additional Days",
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6
+        },
+        {
+          "id": "CdcOffset",
+          "source_code_name": "CDC_OFFSET",
+          "description": "Cash Discount Offset",
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6,
+          "default_value": 0
+        },
+        {
+          "id": "SignMsg",
+          "source_code_name": "SIGNATURE_MESSAGE",
+          "description": "Signature Input Message",
+          "db_type": "Text",
+          "db_size": 0,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "SignDigest",
+          "source_code_name": "SIGNATURE_DIGEST",
+          "description": "Signature Digest",
+          "db_type": "Text",
+          "db_size": 0,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "CertifNum",
+          "source_code_name": "CERTIFICATION_NUMBER",
+          "description": "Certification Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 50,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "KeyVersion",
+          "source_code_name": "PRIVATE_KEY_VERSION",
+          "description": "Private Key Version",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "EDocGenTyp",
+          "source_code_name": "EDOC_GEN_TYPE",
+          "description": "Electr. Doc. Generation Type",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "Not Relevant"
+            },
+            {
+              "value": "G",
+              "description": "Generate"
+            },
+            {
+              "value": "L",
+              "description": "Generate - Later"
+            },
+            {
+              "value": "S",
+              "description": "Send"
+            },
+            {
+              "value": "R",
+              "description": "Send - Later"
+            }
+          ]
+        },
+        {
+          "id": "ESeries",
+          "source_code_name": "ESERIES",
+          "description": "Electronic Series",
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6
+        },
+        {
+          "id": "EDocNum",
+          "source_code_name": "EDOC_NUM",
+          "description": "Electronic Document Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 50,
+          "edit_type": "None",
+          "edit_size": 50
+        },
+        {
+          "id": "EDocExpFrm",
+          "source_code_name": "EDOC_FORMAT",
+          "description": "Electronic Doc. Export Format",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "OnlineQuo",
+          "source_code_name": "ONLINE_QUOTATION",
+          "description": "Create Online Quotation",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "POSEqNum",
+          "source_code_name": "POS_EQUIPMENT_NUMBER",
+          "description": "POS Equipment Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 20,
+          "edit_type": "None",
+          "edit_size": 20
+        },
+        {
+          "id": "POSManufSN",
+          "source_code_name": "POS_MANUF_SER_NUMBER",
+          "description": "POS Manufacturer Serial Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 20,
+          "edit_type": "None",
+          "edit_size": 20
+        },
+        {
+          "id": "POSCashN",
+          "source_code_name": "POS_CASHIER_NUMBER",
+          "description": "POS Cashier Number",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 3
+        },
+        {
+          "id": "EDocStatus",
+          "source_code_name": "EDOC_STATUS",
+          "description": "Electronic Document Status",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "C",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "New"
+            },
+            {
+              "value": "P",
+              "description": "Pending"
+            },
+            {
+              "value": "S",
+              "description": "Sent"
+            },
+            {
+              "value": "E",
+              "description": "Error"
+            },
+            {
+              "value": "C",
+              "description": "OK"
+            }
+          ]
+        },
+        {
+          "id": "EDocCntnt",
+          "source_code_name": "EDOC_CONTENT",
+          "description": "Electronic Document Content",
+          "db_type": "Text",
+          "db_size": 0,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "EDocProces",
+          "source_code_name": "EDOC_PROCESS",
+          "description": "Electronic Document Process",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "C",
+          "valid_value": [
+            {
+              "value": "C",
+              "description": "CFD"
+            },
+            {
+              "value": "I",
+              "description": "CFDI"
+            }
+          ]
+        },
+        {
+          "id": "EDocErrCod",
+          "source_code_name": "EDOC_ERROR_CODE",
+          "description": "Electronic Document Error Code",
+          "db_type": "AlphaNumeric",
+          "db_size": 50,
+          "edit_type": "None",
+          "edit_size": 50
+        },
+        {
+          "id": "EDocErrMsg",
+          "source_code_name": "EDOC_ERROR_MESSAGE",
+          "description": "Electronic Document Error Msg",
+          "db_type": "Text",
+          "db_size": 0,
+          "edit_type": "None",
+          "edit_size": 1
+        },
+        {
+          "id": "EDocCancel",
+          "source_code_name": "EDOC_IS_CANCELED",
+          "description": "Electronic Document - Canceled",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "Y",
+              "description": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "EDocTest",
+          "source_code_name": "EDOC_TESTING_MODE",
+          "description": "Electronic Document - Testing",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "Y",
+              "description": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "EDocPrefix",
+          "source_code_name": "EDOC_PREFIX",
+          "description": "Electronic Document - Prefix",
+          "db_type": "AlphaNumeric",
+          "db_size": 10,
+          "edit_type": "None",
+          "edit_size": 10
+        },
+        {
+          "id": "CUP",
+          "source_code_name": "CUP",
+          "description": "Unique Code of Project",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "CIG",
+          "source_code_name": "CIG",
+          "description": "Contract Code Identification",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "DpmAsDscnt",
+          "source_code_name": "DPM_AS_DISCOUNT",
+          "description": "Discount Document with Dpm",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "Y",
+              "description": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "Attachment",
+          "source_code_name": "ATTACHMENT",
+          "description": "Attachment",
+          "field_type": 280,
+          "db_type": "Text",
+          "db_size": 0,
+          "edit_type": "None",
+          "edit_size": 10
+        },
+        {
+          "id": "AtcEntry",
+          "source_code_name": "ATTACHMENT_ENTRY",
+          "description": "Attachment Entry",
+          "field_type": 273,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "SupplCode",
+          "source_code_name": "SUPPL_CODE",
+          "description": "Supplementary Code",
+          "field_type": 1251,
+          "db_type": "AlphaNumeric",
+          "db_size": 254,
+          "edit_type": "None",
+          "edit_size": 254
+        },
+        {
+          "id": "GTSRlvnt",
+          "source_code_name": "GTS_RELEVANT",
+          "description": "Relevant To GTS",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "Y",
+              "description": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "BaseDisc",
+          "source_code_name": "BASE_DISC_LC",
+          "description": "Base Discount LC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "BaseDiscSc",
+          "source_code_name": "BASE_DISC_SC",
+          "description": "Base Discount SC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "BaseDiscFc",
+          "source_code_name": "BASE_DISC_FC",
+          "description": "Base Discount FC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "BaseDiscPr",
+          "source_code_name": "BASE_DISC_PERC",
+          "description": "Base Discount Percentage",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Percent",
+          "edit_size": 8
+        },
+        {
+          "id": "CreateTS",
+          "source_code_name": "CREATE_TIME",
+          "description": "Creatn Time - Incl. Secs",
+          "field_type": 300,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "Time",
+          "edit_size": 11
+        },
+        {
+          "id": "UpdateTS",
+          "source_code_name": "UPDATE_TIME",
+          "description": "Update Full Time",
+          "field_type": 301,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "Time",
+          "edit_size": 11
+        },
+        {
+          "id": "SrvTaxRule",
+          "source_code_name": "SERVICE_TAX_RULE",
+          "description": "Apply Service Tax Rule",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "AnnInvDecR",
+          "source_code_name": "ANN_INV_DECL_REF",
+          "description": "Annual Inv. Declaration Ref.",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "Supplier",
+          "source_code_name": "SUPPLIER",
+          "description": "Supplier",
+          "db_type": "AlphaNumeric",
+          "db_size": 15,
+          "edit_type": "None",
+          "edit_size": 15
+        },
+        {
+          "id": "Releaser",
+          "source_code_name": "RELEASER",
+          "description": "Goods Distribution Approver",
+          "field_type": 500,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "Receiver",
+          "source_code_name": "RECEIVER",
+          "description": "Goods Release Approver",
+          "field_type": 500,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "ToWhsCode",
+          "source_code_name": "TO_WHS_CODE",
+          "description": "To Warehouse Code",
+          "db_type": "AlphaNumeric",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "AssetDate",
+          "source_code_name": "ASSET_VALUE_DATE",
+          "description": "Fixed Asset Value Date",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "Requester",
+          "source_code_name": "REQUESTER",
+          "description": "User Requesting Goods",
+          "db_type": "AlphaNumeric",
+          "db_size": 25,
+          "edit_type": "None",
+          "edit_size": 25
+        },
+        {
+          "id": "ReqName",
+          "source_code_name": "REQUESTER_NAME",
+          "description": "User Name",
+          "db_type": "AlphaNumeric",
+          "db_size": 155,
+          "edit_type": "None",
+          "edit_size": 155
+        },
+        {
+          "id": "Branch",
+          "source_code_name": "REQUESTER_BRANCH",
+          "description": "Branch",
+          "field_type": 500,
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6
+        },
+        {
+          "id": "Department",
+          "source_code_name": "REQUESTER_DEPART",
+          "description": "Department",
+          "field_type": 500,
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6
+        },
+        {
+          "id": "Email",
+          "source_code_name": "REQUESTER_EMAIL",
+          "description": "E-Mail",
+          "db_type": "AlphaNumeric",
+          "db_size": 100,
+          "edit_type": "None",
+          "edit_size": 100
+        },
+        {
+          "id": "Notify",
+          "source_code_name": "SEND_NOTIFICATION",
+          "description": "Send Notification Needed",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "ReqType",
+          "source_code_name": "REQUESTER_TYPE",
+          "description": "Requester Type User/Employee",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": 12,
+          "valid_value": [
+            {
+              "value": 12,
+              "description": "User"
+            },
+            {
+              "value": 171,
+              "description": "Employee"
+            }
+          ]
+        },
+        {
+          "id": "OriginType",
+          "source_code_name": "ORIGIN_TYPE",
+          "description": "Document Origin",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "M",
+          "valid_value": [
+            {
+              "value": "M",
+              "description": "Manual"
+            },
+            {
+              "value": "R",
+              "description": "MRP"
+            },
+            {
+              "value": "S",
+              "description": "Sales Order"
+            },
+            {
+              "value": "D",
+              "description": "Document Generation Wizard"
+            }
+          ]
+        },
+        {
+          "id": "IsReuseNum",
+          "source_code_name": "IS_REUSE_DOC_NUM",
+          "description": "Is Reusing Document Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "IsReuseNFN",
+          "source_code_name": "IS_REUSE_NF_NUM",
+          "description": "Is Reusing Nota Fiscal Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "DocDlvry",
+          "source_code_name": "DOCUMENT_DELIVERY",
+          "description": "Document Delivery",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "valid_value": [
+            {
+              "value": 0,
+              "description": "None"
+            },
+            {
+              "value": 1,
+              "description": "Create Online Document"
+            },
+            {
+              "value": 2,
+              "description": "Post to Ariba Network"
+            }
+          ]
+        },
+        {
+          "id": "PaidDpm",
+          "source_code_name": "PAID_BY_DPM",
+          "description": "Paid by Down Payment",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "PaidDpmF",
+          "source_code_name": "PAID_BY_DPM_FC",
+          "description": "Paid by Down Payment (FC)",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "PaidDpmS",
+          "source_code_name": "PAID_BY_DPM_SC",
+          "description": "Paid by Down Payment (SC)",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "EnvTypeNFe",
+          "source_code_name": "ENVIRONMENT_TYPE_NFE",
+          "description": "Environment Type NF-e",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11,
+          "default_value": -1
+        },
+        {
+          "id": "AgrNo",
+          "source_code_name": "AGREEMENT_NO",
+          "description": "Agreement No.",
+          "field_type": 500,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "IsAlt",
+          "source_code_name": "IS_ALTERATION",
+          "description": "Is Alteration",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "AltBaseTyp",
+          "source_code_name": "ALT_BASETYPE",
+          "description": "Alteration Base Type",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11,
+          "default_value": -1,
+          "valid_value": [
+            {
+              "value": -1,
+              "description": ""
+            },
+            {
+              "value": 13,
+              "description": ""
+            },
+            {
+              "value": 18,
+              "description": ""
+            },
+            {
+              "value": 163,
+              "description": ""
+            },
+            {
+              "value": 165,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "AltBaseEnt",
+          "source_code_name": "ALT_BASEENT",
+          "description": "Alteration Base Entry",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "AuthCode",
+          "source_code_name": "AUTHORIZATION_CODE",
+          "description": "Authorization Code",
+          "db_type": "AlphaNumeric",
+          "db_size": 250,
+          "edit_type": "None",
+          "edit_size": 250
+        },
+        {
+          "id": "StDlvDate",
+          "source_code_name": "START_DLV_DATE",
+          "description": "Start Delivery Date",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "StDlvTime",
+          "source_code_name": "START_DLV_TIME",
+          "description": "Start Delivery Time",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "Time",
+          "edit_size": 11
+        },
+        {
+          "id": "EndDlvDate",
+          "source_code_name": "END_DLV_DATE",
+          "description": "End Delivery Date",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "EndDlvTime",
+          "source_code_name": "END_DLV_TIME",
+          "description": "End Delivery Time",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "Time",
+          "edit_size": 11
+        },
+        {
+          "id": "VclPlate",
+          "source_code_name": "VEHICLE_PLATE",
+          "description": "Vehicle Plate",
+          "db_type": "AlphaNumeric",
+          "db_size": 20,
+          "edit_type": "None",
+          "edit_size": 20
+        },
+        {
+          "id": "ElCoStatus",
+          "source_code_name": "ELEC_COMM_STATUS",
+          "description": "Elec. Comm. Status",
+          "db_type": "AlphaNumeric",
+          "db_size": 10,
+          "edit_type": "None",
+          "edit_size": 10,
+          "valid_value": [
+            {
+              "value": 0,
+              "description": "Approved"
+            },
+            {
+              "value": 1,
+              "description": "Pending Approval"
+            },
+            {
+              "value": 2,
+              "description": "Rejected"
+            }
+          ]
+        },
+        {
+          "id": "AtDocType",
+          "source_code_name": "AT_DOC_TYPE",
+          "description": "AT Document Type",
+          "db_type": "AlphaNumeric",
+          "db_size": 2,
+          "edit_type": "None",
+          "edit_size": 2,
+          "valid_value": [
+            {
+              "value": "GT",
+              "description": "GT"
+            },
+            {
+              "value": "GA",
+              "description": "GA"
+            },
+            {
+              "value": "GD",
+              "description": "GD"
+            },
+            {
+              "value": "GR",
+              "description": "GR"
+            },
+            {
+              "value": "GC",
+              "description": "GC"
+            },
+            {
+              "value": "FT",
+              "description": "FT"
+            },
+            {
+              "value": "FS",
+              "description": "FS"
+            },
+            {
+              "value": "NC",
+              "description": "NC"
+            },
+            {
+              "value": "ND",
+              "description": "ND"
+            },
+            {
+              "value": "FR",
+              "description": "FR"
+            }
+          ]
+        },
+        {
+          "id": "ElCoMsg",
+          "source_code_name": "ELEC_COMM_MSG",
+          "description": "Elec. Comm. Message",
+          "db_type": "AlphaNumeric",
+          "db_size": 254,
+          "edit_type": "None",
+          "edit_size": 254
+        },
+        {
+          "id": "PrintSEPA",
+          "source_code_name": "PRINT_SEPA_DIRECT",
+          "description": "Print SEPA Direct Debit Prenotification",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "FreeChrg",
+          "source_code_name": "FREE_OF_CHARGE",
+          "description": "Free of Charge BP",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "FreeChrgFC",
+          "source_code_name": "FREE_OF_CHARGE_FC",
+          "description": "Free of Charge BP FC",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "FreeChrgSC",
+          "source_code_name": "FREE_OF_CHARGE_SC",
+          "description": "Free of Charge BP SC",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "NfeValue",
+          "source_code_name": "NFE_VALUE",
+          "description": "NF-e Value",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "FiscDocNum",
+          "source_code_name": "FISCAL_DOC_NUMBER",
+          "description": "Fiscal Document Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 100,
+          "edit_type": "None",
+          "edit_size": 100
+        },
+        {
+          "id": "RelatedTyp",
+          "source_code_name": "RELATED_TYPE",
+          "description": "Related Type",
+          "field_type": 2100,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11,
+          "default_value": -1,
+          "valid_value": {
+            "value": -1
+          }
+        },
+        {
+          "id": "RelatedEnt",
+          "source_code_name": "RELATED_ENT",
+          "description": "Related Entry",
+          "field_type": 2101,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "CCDEntry",
+          "source_code_name": "CCD_ABS_ENTRY",
+          "description": "CCD Abs. Entry",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "NfePrntFo",
+          "source_code_name": "NFE_PRINTING_FORMAT",
+          "description": "NF-e Printing Format",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11,
+          "default_value": 0,
+          "valid_value": [
+            {
+              "value": 0,
+              "description": "No DANFE"
+            },
+            {
+              "value": 1,
+              "description": "Portrait"
+            },
+            {
+              "value": 2,
+              "description": "Landscape"
+            },
+            {
+              "value": 3,
+              "description": "Simplified"
+            },
+            {
+              "value": 4,
+              "description": "DANFE NFC-e"
+            },
+            {
+              "value": 5,
+              "description": "Mail"
+            }
+          ]
+        },
+        {
+          "id": "ZrdAbs",
+          "source_code_name": "ZRD_ABS_ENTRY",
+          "description": "POS Daily Summary Number",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "POSRcptNo",
+          "source_code_name": "POS_RECEIPT_NO",
+          "description": "POS Receipt Number",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 9
+        },
+        {
+          "id": "FoCTax",
+          "source_code_name": "FOC_TAX",
+          "description": "Free of Charge BP Tax",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "FoCTaxFC",
+          "source_code_name": "FOC_TAX_FC",
+          "description": "Free of Charge BP Tax FC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "FoCTaxSC",
+          "source_code_name": "FOC_TAX_SC",
+          "description": "Free of Charge BP Tax SC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "TpCusPres",
+          "source_code_name": "USR_PRESENCE_TYPE",
+          "description": "Type of End-User Presence",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 1
+        },
+        {
+          "id": "ExcDocDate",
+          "source_code_name": "EXCISE_DOC_DATE",
+          "description": "Excise Doc. Date",
+          "field_type": 4,
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "FoCFrght",
+          "source_code_name": "FOC_FREIGHT",
+          "description": "Free of Charge Freight",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "FoCFrghtFC",
+          "source_code_name": "FOC_FREIGHT_FC",
+          "description": "Free of Charge Freight FC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "FoCFrghtSC",
+          "source_code_name": "FOC_FREIGHT_SC",
+          "description": "Free of Charge Freight SC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "InterimTyp",
+          "source_code_name": "INTERIM_TYPE",
+          "description": "Interim Type",
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": 0,
+          "valid_value": {
+            "value": 0,
+            "description": "None"
+          }
+        },
+        {
+          "id": "PTICode",
+          "source_code_name": "PTI_CODE",
+          "description": "POI Code",
+          "db_type": "AlphaNumeric",
+          "db_size": 5,
+          "edit_type": "None",
+          "edit_size": 5
+        },
+        {
+          "id": "Letter",
+          "source_code_name": "LETTER",
+          "description": "Letter",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1
+        },
+        {
+          "id": "FolNumFrom",
+          "source_code_name": "FOLIO_NUM_FROM",
+          "description": "Folio Number From",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "FolNumTo",
+          "source_code_name": "FOLIO_NUM_TO",
+          "description": "Folio Number To",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "FolSeries",
+          "source_code_name": "FOLIO_SERIES",
+          "description": "Folio Series",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "SplitTax",
+          "source_code_name": "SPLIT_PAYMENT_TAX",
+          "description": "Split Payment Tax",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "SplitTaxFC",
+          "source_code_name": "SPLIT_PAYMENT_TAX_FC",
+          "description": "Split Payment Tax FC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "SplitTaxSC",
+          "source_code_name": "SPLIT_PAYMENT_TAX_SC",
+          "description": "Split Payment Tax SC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 8
+        },
+        {
+          "id": "ToBinCode",
+          "source_code_name": "TO_BIN_LOC_CODE",
+          "description": "To Bin Location",
+          "db_type": "AlphaNumeric",
+          "db_size": 228,
+          "edit_type": "None",
+          "edit_size": 228
+        },
+        {
+          "id": "PriceMode",
+          "source_code_name": "PRICE_MODE",
+          "description": "Price Mode",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "Net"
+            },
+            {
+              "value": "G",
+              "description": "Gross"
+            },
+            {
+              "value": "M",
+              "description": "Net and Gross"
+            }
+          ]
+        },
+        {
+          "id": "PoDropPrss",
+          "source_code_name": "PO_DROP_PROCESS",
+          "description": "PO Drop-Ship Process",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "PermitNo",
+          "source_code_name": "PERMIT_NUMBER",
+          "description": "Permit Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 20,
+          "edit_type": "None",
+          "edit_size": 20
+        },
+        {
+          "id": "MYFtype",
+          "source_code_name": "MYF_TYPE",
+          "description": "MYF type",
+          "db_type": "AlphaNumeric",
+          "db_size": 2,
+          "edit_type": "None",
+          "edit_size": 0,
+          "valid_value": [
+            {
+              "value": "S1",
+              "description": "MYF Wholesale Sales"
+            },
+            {
+              "value": "S2",
+              "description": "Retail Sales"
+            },
+            {
+              "value": "P1",
+              "description": "MYF Wholesale Purchases"
+            },
+            {
+              "value": "P3",
+              "description": "Other Expense Transactions"
+            }
+          ]
+        },
+        {
+          "id": "DocTaxID",
+          "source_code_name": "DOCUMENT_TAX_ID",
+          "description": "Document Tax ID",
+          "db_type": "AlphaNumeric",
+          "db_size": 32,
+          "edit_type": "None",
+          "edit_size": 32
+        },
+        {
+          "id": "DateReport",
+          "source_code_name": "DATE_OF_REPORTING",
+          "description": "Date of Reporting",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "RepSection",
+          "source_code_name": "REPORTING_SECTION",
+          "description": "Reporting Section",
+          "db_type": "AlphaNumeric",
+          "db_size": 3,
+          "edit_type": "None",
+          "edit_size": 3
+        },
+        {
+          "id": "ExclTaxRep",
+          "source_code_name": "EXCLUDE_FROM_TAX_REP",
+          "description": "Exclude from Control Statement",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "PosCashReg",
+          "source_code_name": "POS_CASH_REGISTER",
+          "description": "POS/Cash Register",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "DmpTransID",
+          "source_code_name": "DMP_TRANS_ID",
+          "description": "Trans ID for Down Payment",
+          "db_type": "AlphaNumeric",
+          "db_size": 20,
+          "edit_type": "None",
+          "edit_size": 20
+        },
+        {
+          "id": "ECommerBP",
+          "source_code_name": "ECOMMER_BP",
+          "description": "E-Commerce Operator",
+          "field_type": 60,
+          "db_type": "AlphaNumeric",
+          "db_size": 15,
+          "edit_type": "None",
+          "edit_size": 15
+        },
+        {
+          "id": "EComerGSTN",
+          "source_code_name": "ECOMMER_GSTN",
+          "description": "GST Regn No of E-Commerce",
+          "field_type": 280,
+          "db_type": "AlphaNumeric",
+          "db_size": 15,
+          "edit_type": "None",
+          "edit_size": 15
+        },
+        {
+          "id": "Revision",
+          "source_code_name": "REVISION",
+          "description": "Revision",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "RevRefNo",
+          "source_code_name": "REV_REF_NO",
+          "description": "Original Ref. No.",
+          "db_type": "AlphaNumeric",
+          "db_size": 100,
+          "edit_type": "None",
+          "edit_size": 100
+        },
+        {
+          "id": "RevRefDate",
+          "source_code_name": "REV_REF_DATE",
+          "description": "Original Ref. Date",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "RevCreRefN",
+          "source_code_name": "REV_CRE_REF_NO",
+          "description": "Original Credit/Debit Ref. No.",
+          "db_type": "AlphaNumeric",
+          "db_size": 100,
+          "edit_type": "None",
+          "edit_size": 100
+        },
+        {
+          "id": "RevCreRefD",
+          "source_code_name": "REV_CRE_REF_DATE",
+          "description": "Orign Credit/Debit Ref. Date",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "TaxInvNo",
+          "source_code_name": "TAX_INV_NO",
+          "description": "Tax Invoice No.",
+          "db_type": "AlphaNumeric",
+          "db_size": 100,
+          "edit_type": "None",
+          "edit_size": 100
+        },
+        {
+          "id": "FrmBpDate",
+          "source_code_name": "FROM_VENDOR_DATE",
+          "description": "From Vendor Date",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 8
+        },
+        {
+          "id": "GSTTranTyp",
+          "source_code_name": "GST_TRANS_TYPE",
+          "description": "GST Transaction Type",
+          "field_type": 266,
+          "db_type": "AlphaNumeric",
+          "db_size": 2,
+          "edit_type": "None",
+          "edit_size": 2,
+          "valid_value": [
+            {
+              "value": "--",
+              "description": "Bill of Supply"
+            },
+            {
+              "value": "GA",
+              "description": "GST Tax Invoice"
+            },
+            {
+              "value": "GD",
+              "description": "GST Debit Memo"
+            }
+          ]
+        },
+        {
+          "id": "BaseType",
+          "source_code_name": "BASE_TYPE",
+          "description": "Base Document Type",
+          "field_type": 25,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11,
+          "default_value": -1,
+          "valid_value": {
+            "value": -1
+          }
+        },
+        {
+          "id": "BaseEntry",
+          "source_code_name": "BASE_ABS_ENT",
+          "description": "Base Document Internal Key",
+          "field_type": 26,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "ComTrade",
+          "source_code_name": "COMMISSION_TRADE",
+          "description": "Commission Trade",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "E",
+          "valid_value": [
+            {
+              "value": "E"
+            },
+            {
+              "value": "S",
+              "description": "Sales Agent"
+            },
+            {
+              "value": "P",
+              "description": "Purchase Agent"
+            },
+            {
+              "value": "C",
+              "description": "Consignor"
+            }
+          ]
+        },
+        {
+          "id": "UseBilAddr",
+          "source_code_name": "USE_BILL_TO_ADDR",
+          "description": "Determine GST by Using Bill to",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "IssReason",
+          "source_code_name": "ISSING_REASON",
+          "description": "Reason for issuing note",
+          "db_type": "Integer",
+          "db_size": 6,
+          "edit_type": "None",
+          "edit_size": 6,
+          "default_value": 1,
+          "valid_value": [
+            {
+              "value": 1,
+              "description": "Sales Return"
+            },
+            {
+              "value": 2,
+              "description": "Post sale discount"
+            },
+            {
+              "value": 3,
+              "description": "Deficiency in service"
+            },
+            {
+              "value": 4,
+              "description": "Correction in invoice"
+            },
+            {
+              "value": 5,
+              "description": "Change in POS"
+            },
+            {
+              "value": 6,
+              "description": "Finalization of Provisional Assessment"
+            },
+            {
+              "value": 7,
+              "description": "Others"
+            }
+          ]
+        },
+        {
+          "id": "ComTradeRt",
+          "source_code_name": "COMMISSION_TRADE_RET",
+          "description": "Commission Trade Return",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "SplitPmnt",
+          "source_code_name": "SPLIT_PAYMENT",
+          "description": "A/P Split Payment",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "SOIWizId",
+          "source_code_name": "SOI_WIZARD_ID",
+          "description": "SOI Wizard ID",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "SelfPosted",
+          "source_code_name": "SELF_POSTED",
+          "description": "Self Invoice Created [Yes/No]",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "EnBnkAcct",
+          "source_code_name": "ENCRYPT_BANK_ACCOUNT",
+          "description": "Encryption of Pay to Bank Acct",
+          "field_type": 506,
+          "db_type": "Text",
+          "db_size": 0,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "EncryptIV",
+          "source_code_name": "ENCRYPT_IV",
+          "description": "Encrypt IV",
+          "field_type": 509,
+          "db_type": "AlphaNumeric",
+          "db_size": 100,
+          "edit_type": "None",
+          "edit_size": 100
+        },
+        {
+          "id": "DPPStatus",
+          "source_code_name": "DPP_STATUS",
+          "description": "Data Protection Status",
+          "field_type": 505,
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "None"
+            },
+            {
+              "value": "D",
+              "description": "Erased"
+            }
+          ]
+        },
+        {
+          "id": "SAPPassprt",
+          "source_code_name": "SAP_PASSPORT",
+          "description": "Extended SAP Passport",
+          "field_type": 508,
+          "db_type": "Text",
+          "db_size": 0,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "EWBGenType",
+          "source_code_name": "EWB_GEN_TYPE",
+          "description": "E-Way Bill Generation Type",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "Not Relevant"
+            },
+            {
+              "value": "G",
+              "description": "Generate"
+            },
+            {
+              "value": "L",
+              "description": "Generate - Later"
+            }
+          ]
+        },
+        {
+          "id": "CtActTax",
+          "source_code_name": "CSTMACT_TAX",
+          "description": "Customer Accounting Tax",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "CtActTaxFC",
+          "source_code_name": "CSTMACT_TAX_FC",
+          "description": "Customer Accounting Tax (FC)",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "CtActTaxSC",
+          "source_code_name": "CSTMACT_TAX_SC",
+          "description": "Customer Accounting Tax (SC)",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "Sum",
+          "edit_size": 20
+        },
+        {
+          "id": "EDocType",
+          "source_code_name": "EDOC_TYPE",
+          "description": "eDoc Type",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "F",
+          "valid_value": [
+            {
+              "value": "F",
+              "description": "FE"
+            },
+            {
+              "value": "C",
+              "description": "FCE"
+            }
+          ]
+        },
+        {
+          "id": "QRCodeSrc",
+          "source_code_name": "QR_CODE_SRC",
+          "description": "QR Code Source",
+          "field_type": 511,
+          "db_type": "Text",
+          "db_size": 0,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "AggregDoc",
+          "source_code_name": "AGGREGATION_DOCUMENT",
+          "description": "Aggregate Document",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "DataVers",
+          "source_code_name": "DATA_VERSION",
+          "description": "Data Version",
+          "field_type": 512,
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11,
+          "default_value": 1
+        },
+        {
+          "id": "ShipState",
+          "source_code_name": "SHIPMENT_STATE_CODE",
+          "description": "Shipment State Code",
+          "db_type": "AlphaNumeric",
+          "db_size": 3,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "ShipPlace",
+          "source_code_name": "SHIPMENT_PLACE_NAME",
+          "description": "Shipment Place Name",
+          "db_type": "AlphaNumeric",
+          "db_size": 60,
+          "edit_type": "None",
+          "edit_size": 60
+        },
+        {
+          "id": "CustOffice",
+          "source_code_name": "CUSTOMS_OFFICE_NAME",
+          "description": "Customs Office Name",
+          "db_type": "AlphaNumeric",
+          "db_size": 60,
+          "edit_type": "None",
+          "edit_size": 60
+        },
+        {
+          "id": "FCI",
+          "source_code_name": "FCI",
+          "description": "FCI Number",
+          "db_type": "AlphaNumeric",
+          "db_size": 36,
+          "edit_type": "None",
+          "edit_size": 36
+        },
+        {
+          "id": "NnSbCuAmnt",
+          "source_code_name": "WT_NON_SBJCT_CU_AMNT",
+          "description": "WTax Non-Subject CU Amount",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "NnSbCuSC",
+          "source_code_name": "WT_NON_SBJCT_CU_SC",
+          "description": "WTax Non-Subject CU Amount SC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "NnSbCuFC",
+          "source_code_name": "WT_NON_SBJCT_CU_FC",
+          "description": "WTax Non-Subject CU Amount FC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "ExepCuAmnt",
+          "source_code_name": "WT_EXEMPTED_CU_AMNT",
+          "description": "WTax Exempt CU Amount",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "ExepCuSC",
+          "source_code_name": "WT_EXEMPTED_CU_SC",
+          "description": "WTax Exempt CU Amount SC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "ExepCuFC",
+          "source_code_name": "WT_EXEMPTED_CU_FC",
+          "description": "WTax Exempt CU Amount FC",
+          "db_type": "Float",
+          "db_size": 8,
+          "edit_type": "Sum",
+          "edit_size": 0
+        },
+        {
+          "id": "AddLegIn",
+          "source_code_name": "ADDITIONAL_LEGAL_INF",
+          "description": "Additional Legal Information",
+          "db_type": "AlphaNumeric",
+          "db_size": 100,
+          "edit_type": "None",
+          "edit_size": 100
+        },
+        {
+          "id": "LegTextF",
+          "source_code_name": "LEGAL_TEXT_FORMAT",
+          "description": "Legal Text Format",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "IndFinal",
+          "source_code_name": "INDIC_FOR_FINAL",
+          "description": "Indicator for Final Consumer",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "DANFELgTxt",
+          "source_code_name": "DANFE_LEGAL_TEXT",
+          "description": "DANFE Legal Text",
+          "db_type": "Text",
+          "db_size": 0,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "PostPmntWT",
+          "source_code_name": "POST_PAYMENT_WT",
+          "description": "Post Payment Withholding Tax",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "N",
+              "description": "No"
+            },
+            {
+              "value": "Y",
+              "description": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "QRCodeSPGn",
+          "source_code_name": "QR_CODE_SP_GENERATED",
+          "description": "QR Code Source Generated from Stored Procedure",
+          "db_type": "Text",
+          "db_size": 0,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "FCEPmnMean",
+          "source_code_name": "FCE_AS_PAYMENT_MEANS",
+          "description": "Use FCEs as Payment Means",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "ReqCode",
+          "source_code_name": "REQUESTER_CODE",
+          "description": "Requester Code",
+          "db_type": "AlphaNumeric",
+          "db_size": 50,
+          "edit_type": "None",
+          "edit_size": 50
+        },
+        {
+          "id": "NotRel4MI",
+          "source_code_name": "JP_MI_NOT_RELEVANT",
+          "description": "Not Relevant for Monthly Invoice",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 0,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "Rel4PPTax",
+          "source_code_name": "RELEVANT_FOR_PP_TAX",
+          "description": "Relevant for Plastic Packaging Tax",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        },
+        {
+          "id": "ConfrmedBy",
+          "source_code_name": "CONFIRMED_BY",
+          "description": "Confirmed By",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "ConfrmedOn",
+          "source_code_name": "CONFIRMED_ON",
+          "description": "Confirmed On",
+          "db_type": "Date",
+          "db_size": 8,
+          "edit_type": "None",
+          "edit_size": 0
+        },
+        {
+          "id": "ReqID",
+          "source_code_name": "REQUESTER_ID",
+          "description": "Requester ID",
+          "db_type": "Integer",
+          "db_size": 11,
+          "edit_type": "None",
+          "edit_size": 11
+        },
+        {
+          "id": "NonDdAmt",
+          "source_code_name": "NON_DEDUC_AMOUNT",
+          "description": "Non-Deductible Amount",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "None",
+          "edit_size": 20
+        },
+        {
+          "id": "NonDdAmtSC",
+          "source_code_name": "NON_DEDUC_AMOUNT_SC",
+          "description": "Non-Deductible Amount (SC)",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "None",
+          "edit_size": 20
+        },
+        {
+          "id": "NonDdAmtFC",
+          "source_code_name": "NON_DEDUC_AMOUNT_FC",
+          "description": "Non-Deductible Amount (FC)",
+          "db_type": "Float",
+          "db_size": 20,
+          "edit_type": "None",
+          "edit_size": 20
+        },
+        {
+          "id": "BookeTdsBP",
+          "source_code_name": "BOOK_ETDS_BP",
+          "description": "Book the eTDS to the Business Partner",
+          "db_type": "AlphaNumeric",
+          "db_size": 1,
+          "edit_type": "None",
+          "edit_size": 1,
+          "default_value": "N",
+          "valid_value": [
+            {
+              "value": "Y",
+              "description": "Yes"
+            },
+            {
+              "value": "N",
+              "description": "No"
+            }
+          ]
+        }
+      ],
+      "association": [
+        {
+          "id": "ObjTypeLink",
+          "target_direct": "ADP1",
+          "object_key_column": "ObjType"
+        },
+        {
+          "id": "CardCodeLink",
+          "target_direct": "OCRD",
+          "object_key_column": "CardCode"
+        },
+        {
+          "id": "DocCurLink",
+          "target_direct": "OCRN",
+          "object_key_column": "DocCur"
+        },
+        {
+          "id": "GroupNumLink",
+          "target_direct": "OCTG",
+          "object_key_column": "GroupNum"
+        },
+        {
+          "id": "SlpCodeLink",
+          "target_direct": "OSLP",
+          "object_key_column": "SlpCode"
+        },
+        {
+          "id": "TrnspCodeLink",
+          "target_direct": "OSHP",
+          "object_key_column": "TrnspCode"
+        },
+        {
+          "id": "CntctCodeLink",
+          "target_direct": "OCPR",
+          "object_key_column": "CntctCode"
+        },
+        {
+          "id": "FatherCardLink",
+          "target_direct": "OCRD",
+          "object_key_column": "FatherCard"
+        },
+        {
+          "id": "SeriesLink",
+          "target_direct": "NNM1",
+          "object_key_column": "Series"
+        },
+        {
+          "id": "FillerLink",
+          "target_direct": "OWHS",
+          "object_key_column": "Filler"
+        },
+        {
+          "id": "FinncPriodLink",
+          "target_direct": "OFPR",
+          "object_key_column": "FinncPriod"
+        },
+        {
+          "id": "UserSignLink",
+          "target_direct": "OUSR",
+          "object_key_column": "UserSign"
+        },
+        {
+          "id": "UserSign2Link",
+          "target_direct": "OUSR",
+          "object_key_column": "UserSign2"
+        },
+        {
+          "id": "draftKeyLink",
+          "target_direct": "ODRF",
+          "object_key_column": "draftKey"
+        },
+        {
+          "id": "StationIDLink",
+          "target_direct": "CSTN",
+          "object_key_column": "StationID"
+        },
+        {
+          "id": "IndicatorLink",
+          "target_direct": "OIDC",
+          "object_key_column": "Indicator"
+        },
+        {
+          "id": "Form1099Link",
+          "target_direct": "OTNN",
+          "object_key_column": "Form1099"
+        },
+        {
+          "id": "PeyMethodLink",
+          "target_direct": "OPYM",
+          "object_key_column": "PeyMethod"
+        },
+        {
+          "id": "PayBlckRefLink",
+          "target_direct": "OPYB",
+          "object_key_column": "PayBlckRef"
+        },
+        {
+          "id": "CntrlBnkLink",
+          "target_direct": "OCBI",
+          "object_key_column": "CntrlBnk"
+        },
+        {
+          "id": "ProjectLink",
+          "target_direct": "OPRJ",
+          "object_key_column": "Project"
+        },
+        {
+          "id": "AgentCodeLink",
+          "target_direct": "OAGP",
+          "object_key_column": "AgentCode"
+        },
+        {
+          "id": "CtlAccountLink",
+          "target_direct": "OACT",
+          "object_key_column": "CtlAccount"
+        },
+        {
+          "id": "BPLLink",
+          "target_direct": "OBPL",
+          "object_key_column": "BPLId"
+        },
+        {
+          "id": "PIndicatorLink",
+          "target_direct": "OPID",
+          "object_key_column": "PIndicator"
+        },
+        {
+          "id": "OwnerCodeLink",
+          "target_direct": "OHEM",
+          "object_key_column": "OwnerCode"
+        },
+        {
+          "id": "BPChCodeLink",
+          "target_direct": "OCRD",
+          "object_key_column": "BPChCode"
+        },
+        {
+          "id": "BPChCntcLink",
+          "target_direct": "OCPR",
+          "object_key_column": "BPChCntc"
+        },
+        {
+          "id": "BnkCntryLink",
+          "target_direct": "OCRY",
+          "object_key_column": "BnkCntry"
+        },
+        {
+          "id": "LangCodeLink",
+          "target_direct": "OLNG",
+          "object_key_column": "LangCode"
+        },
+        {
+          "id": "ModelLink",
+          "target_direct": "ONFM",
+          "object_key_column": "Model"
+        },
+        {
+          "id": "DftCheckerLink",
+          "target_direct": "OHEM",
+          "object_key_column": "Checker"
+        },
+        {
+          "id": "DftPayeeLink",
+          "target_direct": "OHEM",
+          "object_key_column": "Payee"
+        },
+        {
+          "id": "NTSWebSiteLink",
+          "target_direct": "OTWS",
+          "object_key_column": "NTSWebSite"
+        },
+        {
+          "id": "ESeriesLink",
+          "target_direct": "NNM4",
+          "object_key_column": "ESeries"
+        },
+        {
+          "id": "CUPLink",
+          "target_direct": "OCUP",
+          "object_key_column": "CUP"
+        },
+        {
+          "id": "CIGLink",
+          "target_direct": "OCIG",
+          "object_key_column": "CIG"
+        },
+        {
+          "id": "SupplierLink",
+          "target_direct": "OCRD",
+          "object_key_column": "Supplier"
+        },
+        {
+          "id": "ReleaserLink",
+          "target_direct": "OHEM",
+          "object_key_column": "Releaser"
+        },
+        {
+          "id": "ReceiverLink",
+          "target_direct": "OHEM",
+          "object_key_column": "Receiver"
+        },
+        {
+          "id": "ToWhsCodeLink",
+          "target_direct": "OWHS",
+          "object_key_column": "ToWhsCode"
+        },
+        {
+          "id": "OUBRLink",
+          "target_direct": "OUBR",
+          "object_key_column": "Branch"
+        },
+        {
+          "id": "OUDPLink",
+          "target_direct": "OUDP",
+          "object_key_column": "Department"
+        },
+        {
+          "id": "EnvTypeNFeLink",
+          "target_direct": "OBNI",
+          "object_key_column": "EnvTypeNFe"
+        },
+        {
+          "id": "RelatedLink",
+          "target_indirect_object": "RelatedTyp",
+          "object_key_column": "RelatedEnt"
+        },
+        {
+          "id": "ZrdAbsLink",
+          "target_direct": "OZRD",
+          "object_key_column": "ZrdAbs"
+        },
+        {
+          "id": "TpCusPresLink",
+          "target_direct": "OBNI",
+          "object_key_column": "TpCusPres"
+        },
+        {
+          "id": "PTICodeLink",
+          "target_direct": "OPTI",
+          "object_key_column": "PTICode"
+        },
+        {
+          "id": "FolSeriesLink",
+          "target_direct": "OFNS",
+          "object_key_column": "FolSeries"
+        },
+        {
+          "id": "ECommerBPLink",
+          "target_direct": "OCRD",
+          "object_key_column": "ECommerBP"
+        },
+        {
+          "id": "BaseTypeLink",
+          "target_indirect_object": "BaseType",
+          "object_key_column": "BaseEntry"
+        },
+        {
+          "id": "SOIWizIdLink",
+          "target_direct": "OSOI",
+          "object_key_column": "SOIWizId"
+        },
+        {
+          "id": "ShipStateLink",
+          "target_direct": "OCST",
+          "object_key_column": "ShipState"
+        },
+        {
+          "id": "LegTextFLink",
+          "target_direct": "OLTF",
+          "object_key_column": "LegTextF"
+        }
+      ],
+      "key": [
+        {
+          "id": "PRIMARY",
+          "unique": "",
+          "column": "DocEntry"
+        },
+        {
+          "id": "AT_CARD",
+          "column": [
+            "NumAtCard",
+            "CardCode"
+          ]
+        },
+        {
+          "id": "CUSTOMER",
+          "column": "CardCode"
+        },
+        {
+          "id": "NUM",
+          "unique": "",
+          "column": [
+            "DocNum",
+            "Instance",
+            "Segment",
+            "DocSubType",
+            "PIndicator"
+          ]
+        },
+        {
+          "id": "DOC_STATUS",
+          "column": [
+            "DocStatus",
+            "CANCELED"
+          ]
+        },
+        {
+          "id": "FTHR_CARD",
+          "column": [
+            "FatherCard",
+            "FatherType"
+          ]
+        },
+        {
+          "id": "SERIES",
+          "column": "Series"
+        },
+        {
+          "id": "OWNER_CODE",
+          "column": "OwnerCode"
+        },
+        {
+          "id": "DATE_PIND",
+          "column": [
+            "DocDate",
+            "PIndicator"
+          ]
+        },
+        {
+          "id": "ESERIES",
+          "column": [
+            "ESeries",
+            "EDocNum"
+          ]
+        }
+      ]
+    }
+  }

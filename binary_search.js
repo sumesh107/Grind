@@ -13,17 +13,16 @@ var search = function(nums, target) {
         mid = Math.floor ( (left + right) /2 );
 
         if( nums[mid] == target){
-            res = mid;
-            return res;
+            return mid;
         }
 
         else if( nums[mid] < target){
-            left = mid;
+            left = mid+1;
             continue;
         }
 
         else{
-            right = mid;
+            right = mid-1;
             continue;
         }
     }

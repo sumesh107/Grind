@@ -9,29 +9,32 @@
  * @param {number} amount
  * @return {number}
  */
-var count = function(coins,index,amount){
+// var count = function(coins,index,amount){
 
-    if(amount == 0)
-     return 1;
+//     if(amount == 0)
+//      return 1;
     
-    if(amount < 0 || index < 0)
-     return 0;
+//     if(amount < 0 || index < 0)
+//      return 0;
     
-    return( count(coins,index-1,amount) + count(coins,index,amount-coins[index])) 
-}
+//     return( count(coins,index-1,amount) + count(coins,index,amount-coins[index])) 
+// }
 
-var coinChange = function(coins, amount) {
-    let num = coins.length - 1;
-    let min = Number.POSITIVE_INFINITY;
+// var coinChange = function(coins, amount) {
+//     let num = coins.length - 1;
+//     let min = Number.POSITIVE_INFINITY;
 
-    min = Math.min( count(coins,num,amount), min);
-    return min;
-};
+//     min = Math.min( count(coins,num,amount), min);
+//     return min;
+// };
 
-const coins = [1,2,5];
-const amount = 11;
+// const coins = [1,2,5];
+// const amount = 11;
 
-console.log( coinChange(coins,amount) );
+// console.log( coinChange(coins,amount) );
 
 
+// ---- DP solution ---------
+// trying a dp solution for the above
 
+//--trying 2---
